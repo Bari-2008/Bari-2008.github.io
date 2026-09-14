@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Barivendhan B | Portfolio</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f7fb;
+            color: #1f2937;
+            line-height: 1.6;
+        }
+
+        /* NAVBAR */
+        header {
+            background: #111827;
+            color: white;
+            padding: 18px 8%;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        nav h2 {
+            font-size: 22px;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 15px;
+        }
+
+        nav ul li a:hover {
+            color: #60a5fa;
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 90vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+            background: white;
+        }
+
+        .hero-content {
+            max-width: 800px;
+        }
+
+        .hero h1 {
+            font-size: 52px;
+            margin-bottom: 10px;
+        }
+
+        .hero h1 span {
+            color: #2563eb;
+        }
+
+        .hero h3 {
+            font-size: 22px;
+            font-weight: normal;
+            color: #4b5563;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 17px;
+            color: #6b7280;
+            margin-bottom: 30px;
+        }
+
+        .button {
+            display: inline-block;
+            padding: 12px 22px;
+            margin: 5px;
+            border-radius: 7px;
+            background: #2563eb;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .button:hover {
+            background: #1d4ed8;
+        }
+
+        .button-outline {
+            background: transparent;
+            border: 2px solid #2563eb;
+            color: #2563eb;
+        }
+
+        .button-outline:hover {
+            background: #2563eb;
+            color: white;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 75px 8%;
+        }
+
+        section h2 {
+            text-align: center;
+            font-size: 34px;
+            margin-bottom: 40px;
+        }
+
+        /* ABOUT */
+        .about {
+            max-width: 850px;
+            margin: auto;
+            text-align: center;
+            font-size: 18px;
+            color: #4b5563;
+        }
+
+        /* SKILLS */
+        .skills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .skill {
+            background: white;
+            padding: 14px 25px;
+            border-radius: 8px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.08);
+            font-weight: bold;
+        }
+
+        /* PROJECTS */
+        .projects {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+        }
+
+        .project-card {
+            background: white;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: transform 0.3s;
+        }
+
+        .project-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .project-card h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+            font-size: 21px;
+        }
+
+        .project-card p {
+            color: #6b7280;
+            margin-bottom: 18px;
+        }
+
+        .status {
+            display: inline-block;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            background: #e5e7eb;
+        }
+
+        /* CERTIFICATIONS */
+        .certifications {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+
+        .certificate {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .certificate h3 {
+            color: #2563eb;
+            margin-bottom: 8px;
+        }
+
+        /* ACHIEVEMENTS */
+        .achievement {
+            max-width: 750px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+        }
+
+        .achievement h3 {
+            color: #2563eb;
+            margin-bottom: 10px;
+        }
+
+        /* CONTACT */
+        .contact {
+            text-align: center;
+            background: white;
+        }
+
+        .contact p {
+            font-size: 18px;
+            margin: 10px;
+        }
+
+        .contact a {
+            color: #2563eb;
+            text-decoration: none;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #111827;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        /* MOBILE */
+        @media (max-width: 700px) {
+
+            nav {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav ul {
+                gap: 12px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .hero h1 {
+                font-size: 38px;
+            }
+
+            .hero h3 {
+                font-size: 18px;
+            }
+
+            section {
+                padding: 55px 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <nav>
+        <h2>Barivendhan B</h2>
+
+        <ul>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#achievements">Achievements</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<!-- HERO SECTION -->
+<section class="hero">
+
+    <div class="hero-content">
+
+        <h1>Hello, I'm <span>Barivendhan B</span></h1>
+
+        <h3>Java Developer | C++ Programmer | UI/UX Designer</h3>
+
+        <p>
+            Passionate about software development, problem solving,
+            user interface design and building practical technology solutions.
+        </p>
+
+        <a href="#projects" class="button">
+            View My Projects
+        </a>
+
+        <a href="#contact" class="button button-outline">
+            Contact Me
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT SECTION -->
+<section id="about">
+
+    <h2>About Me</h2>
+
+    <div class="about">
+
+        <p>
+            I am Barivendhan B, a passionate technology enthusiast
+            interested in software development, programming and UI/UX design.
+            I enjoy learning new technologies and creating practical projects
+            that solve real-world problems.
+        </p>
+
+        <br>
+
+        <p>
+            My interests include Java, C++, database technologies,
+            web development and designing user-friendly interfaces.
+            I continuously work on improving my technical and problem-solving
+            skills through hands-on projects.
+        </p>
+
+    </div>
+
+</section>
+
+
+<!-- SKILLS SECTION -->
+<section id="skills">
+
+    <h2>My Skills</h2>
+
+    <div class="skills">
+
+        <div class="skill">Java</div>
+        <div class="skill">C++</div>
+        <div class="skill">UI/UX Design</div>
+        <div class="skill">HTML</div>
+        <div class="skill">CSS</div>
+        <div class="skill">JavaScript</div>
+        <div class="skill">Database</div>
+        <div class="skill">GitHub</div>
+
+    </div>
+
+</section>
+
+
+<!-- PROJECTS SECTION -->
+<section id="projects">
+
+    <h2>My Projects</h2>
+
+    <div class="projects">
+
+
+        <!-- PROJECT 1 -->
+        <div class="project-card">
+
+            <span class="status">
+                FUNCTIONAL PROJECT
+            </span>
+
+            <h3>Student Performance Predictor</h3>
+
+            <p>
+                A functional project designed to predict student performance
+                using relevant academic factors. The project demonstrates
+                programming, data handling and problem-solving concepts.
+            </p>
+
+            <a
+                href="https://github.com/Bari-2008/student-performance-predictor"
+                target="_blank"
+                class="button">
+                View on GitHub
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 2 -->
+        <div class="project-card">
+
+            <span class="status">
+                BASIC DEPLOYMENT
+            </span>
+
+            <h3>College Event Registration</h3>
+
+            <p>
+                A basic web-based college event registration project created
+                to demonstrate web development and deployment concepts.
+            </p>
+
+            <a
+                href="https://github.com/Bari-2008/college-event-registration"
+                target="_blank"
+                class="button">
+                View on GitHub
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 3 -->
+        <div class="project-card">
+
+            <span class="status">
+                PROJECT
+            </span>
+
+            <h3>ML Student Score Predictor</h3>
+
+            <p>
+                A machine learning based project focused on predicting
+                student scores using input data and programming techniques.
+            </p>
+
+            <a
+                href="https://github.com/Bari-2008/ml-student-score-predictor"
+                target="_blank"
+                class="button">
+                View on GitHub
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 4 -->
+        <div class="project-card">
+
+            <span class="status">
+                WEB PROJECT
+            </span>
+
+            <h3>Todo React</h3>
+
+            <p>
+                A Todo application developed using React concepts,
+                demonstrating interactive web development and
+                task management functionality.
+            </p>
+
+            <a
+                href="https://github.com/Bari-2008/todo-react"
+                target="_blank"
+                class="button">
+                View on GitHub
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 5 -->
+        <div class="project-card">
+
+            <span class="status">
+                WEB PROJECT
+            </span>
+
+            <h3>Weather App</h3>
+
+            <p>
+                A weather application created to display weather-related
+                information through a simple and user-friendly interface.
+            </p>
+
+            <a
+                href="https://github.com/Bari-2008/weather-app"
+                target="_blank"
+                class="button">
+                View on GitHub
+            </a>
+
+        </div>
+
+
+        <!-- PROJECT 6 -->
+        <div class="project-card">
+
+            <span class="status">
+                PROJECT
+            </span>
+
+            <h3>Student Management System</h3>
+
+            <p>
+                A student management project designed to demonstrate
+                programming and data management concepts.
+            </p>
+
+            <a
+                href="https://github.com/Bari-2008/student-management-system"
+                target="_blank"
+                class="button">
+                View on GitHub
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- CERTIFICATIONS -->
+<section id="certifications">
+
+    <h2>Certifications</h2>
+
+    <div class="certifications">
+
+        <div class="certificate">
+
+            <h3>Program in Database Security</h3>
+
+            <p>
+                Certification focused on database security concepts,
+                protection and secure database practices.
+            </p>
+
+        </div>
+
+
+        <div class="certificate">
+
+            <h3>Web Designing</h3>
+
+            <p>
+                Certification covering fundamental concepts of
+                web design and website development.
+            </p>
+
+        </div>
+
+
+        <div class="certificate">
+
+            <h3>Software Development</h3>
+
+            <p>
+                Certification focused on software development concepts,
+                programming and development practices.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements">
+
+    <h2>Achievements & Publications</h2>
+
+    <div class="achievement">
+
+        <h3>Book Chapter Submission</h3>
+
+        <p>
+            Currently working on a book chapter submission related
+            to technology and emerging areas of computer science.
+        </p>
+
+        <br>
+
+        <strong>Status: In Process</strong>
+
+    </div>
+
+</section>
+
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+
+    <h2>Contact Me</h2>
+
+    <p>
+        📧 Email:
+        <a href="mailto:bariffvbg@gmail.com">
+            bariffvbg@gmail.com
+        </a>
+    </p>
+
+    <p>
+        💻 GitHub:
+        <a
+            href="https://github.com/Bari-2008"
+            target="_blank">
+            github.com/Bari-2008
+        </a>
+    </p>
+
+    <br>
+
+    <a
+        href="https://github.com/Bari-2008"
+        target="_blank"
+        class="button">
+        Visit My GitHub
+    </a>
+
+</section>
+
+
+<!-- FOOTER -->
+<footer>
+
+    <p>
+        © 2026 Barivendhan B | Personal Portfolio
+    </p>
+
+</footer>
+
+</body>
+</html>
